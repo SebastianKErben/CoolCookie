@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>CoolCookie Example - Set Cookies</title>
+    </head>
+    <body>
+        <p id='fin'></p>
+        <a id='next' href='getCookie.html'></a>
+        <script src="../source/coolCookie.es6"></script>
+        <script>
+            let newCookie = new CoolCookie(2);
+
+            newCookie.cookie.name = 'John Smith';
+            newCookie.cookie.country = 'US';
+            newCookie.cookie.age = 42;
+
+            newCookie.save();
+
+            document.getElementById('fin').innerHTML = 'Cookies set!';
+            document.getElementById('next').innerHTML = 'Please click to continue';
+        </script>
+    </body>
+</html>

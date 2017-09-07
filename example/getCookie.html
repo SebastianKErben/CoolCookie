@@ -1,0 +1,20 @@
+<html>
+        <head>
+            <title>CoolCookie Example - Get Cookies</title>
+        </head>
+        <body>
+            <p id='name'></p>
+            <p id='country'></p>
+            <p id='age'></p>
+            <p id='expires'></p>
+            <script src="../source/coolCookie.es6"></script>
+            <script>
+                let newCookie = new CoolCookie(2);
+                
+                document.getElementById('name').innerHTML = newCookie.cookie.name;
+                document.getElementById('age').innerHTML = newCookie.cookie.age;
+                document.getElementById('country').innerHTML = newCookie.cookie.country;
+                document.getElementById('expires').innerHTML = newCookie.cookie.expires;
+            </script>
+        </body>
+    </html>
