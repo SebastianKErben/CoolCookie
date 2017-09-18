@@ -34,7 +34,7 @@ class CoolCookie {
         this.cookie[entry] = undefined;
         let date = new Date();
         date.setDate(date.getDate() - 1);
-        document.cookie = entry + '= ; ' + 'expires=' + date;
+        document.cookie = `${entry} = ${this.cookie[entry]}; expires = ${date}`;
     }
 
     /**
@@ -52,7 +52,7 @@ class CoolCookie {
         let newCookie = {};
         let crumb = '';
 
-        cookies.forEach(function(element) {
+        cookies.forEach(element => {
             crumb = element.split('=');
             newCookie[crumb[0].replace(/\s+/g, '')] = crumb[1];
         });
@@ -69,6 +69,6 @@ class CoolCookie {
     save() {
         for(const name in this.cookie)
             if (this.cookie[name] !== 'undefined')
-                document.cookie = name + '=' + this.cookie[name] + '; ' + 'expires=' + this.cookie.expires;
+                document.cookie = `${name} = ${this.cookie[name]}; expires = ${this.cookie.expires}`;
     }
 }
